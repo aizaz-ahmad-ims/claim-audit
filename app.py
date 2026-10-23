@@ -44,12 +44,20 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     st.subheader("1. Paste Batch of Notes")
-    st.write("Paste multiple notes below. Separate each note with `---`")
+    st.write("Paste multiple notes below, separated by `---`.")
     
+    # File uploader for text files
+    uploaded_file = st.file_uploader("Or upload a .txt file", type=["txt"])
+    
+    default_text = ""
+    if uploaded_file is not None:
+        default_text = uploaded_file.read().decode("utf-8")
+        
     notes_input = st.text_area(
         "Batch Notes:", 
-        height=450, 
-        placeholder="NOTE 1:\nSUBJECTIVE:\nPatient has fever.\nASSESSMENT:\nViral fever.\nPLAN:\nParacetamol.\n\n---\n\nNOTE 2:\nSUBJECTIVE:\nPatient has 3 days of abdominal pain.\nASSESSMENT:\nAcute abdomen.\nPLAN:\nAcetaminophen 500mg."
+        value=default_text,
+        height=400, 
+        placeholder="NOTE 1:\nSUBJECTIVE:\nPatient has fever.\nASSESSMENT:\nViral fever.\nPLAN:\nParacetamol.\n\n---\n\nNOTE 2:\nSUBJECTIVE:\nPatient has 3 days of abdominal pain..."
     )
     
     audit_btn = st.button("🚨 Audit Batch", use_container_width=True)
