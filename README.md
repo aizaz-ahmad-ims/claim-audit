@@ -5,7 +5,7 @@
 ClaimAudit is an AI agent that scans batches of clinical SOAP notes to identify missing information (denial risks) that would cause insurance companies to reject claims. 
 
 ## 🚀 Live Demo
-*(Add Streamlit link here once deployed)*
+*[(Add Streamlit link here once deployed)](https://claimaudit.streamlit.app/)*
 
 ## 💡 The Problem
 Clinics lose massive revenue because doctors write incomplete notes. If a note says "patient has a cough" but doesn't say "for how long," the insurance claim is denied. Billers currently have to manually read hundreds of pages to find these errors. ClaimAudit automates this QA process.
